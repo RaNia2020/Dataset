@@ -1,1 +1,21 @@
-
+//TEncSearch.cpp
+	   - MPM Mode line 2311 --> mostProbableMode
+	   - Intra Mode line 2356 --> uiMode
+	   - depth line 2188 --> uiDepth
+     - Rate Distortion Cost line 2650 --> rdCost
+     
+===================================================================
+     
+//TEncCU.cpp
+	  - line 669 rdCost
+	  - line 1374 uidepth in xCheckRDCostIntra function line 1357
+	  - line 797 rdCost (totalCost) TCompressCu function
+    	  
+	  **xCheckIntraPCM function:
+	    - line 1460 uiDepth 
+	    - line 1491 getTotalCost
+      
+    ** XCompressCU function:
+		   - line 376: const UInt uiLPelX   = rpcBestCU->getCUPelX();
+		   - line 377: const UInt uiRPelX   = uiLPelX + rpcBestCU->getWidth(0)  - 1;
+		   - line 1537: rpcBestCU->getCUPelX()
